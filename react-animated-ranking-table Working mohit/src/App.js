@@ -44,7 +44,7 @@ function App() {
                   <th
                     className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
                   >
-                    Cryptocurrency
+                    Coin Name
                   </th>
                   <th
                     className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -54,27 +54,33 @@ function App() {
                   <th
                     className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
                   >
+                    Volume(24h)
+                  </th>
+                 
+                  <th
+                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
+                  >
+                    1h %
+                  </th>
+                  <th
+                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
+                  >
+                    24h %
+                  </th>
+                  <th
+                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
+                  >
+                    7d %
+                  </th>
+                  <th
+                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
+                  >
                     Market Cap
                   </th>
                   <th
                     className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
                   >
-                    Total Volume 
-                  </th>
-                  <th
-                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
-                  >
-                    Price Change 24h 
-                  </th>
-                  <th
-                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
-                  >
-                    Price Percentage 24h 
-                  </th>
-                  <th
-                    className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
-                  >
-                    Price Trend
+                    Circulating Supply
                   </th>
                 </tr>
               </thead>
@@ -106,15 +112,21 @@ function App() {
                     <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.coin_volume}</p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.total_volume}</p>
+                    <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.coin_1h_per}</p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-600 whitespace-no-wrap">${cryptocurrency.price_change_24h}</p>
+                    <p className="text-gray-600 whitespace-no-wrap">${cryptocurrency.coin_24h_per}</p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.price_change_percentage_24h}%</p>
+                    <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.coin_7d_per}</p>
                   </td>
-                  {cryptocurrency.price_change_percentage_24h > 0 ? 
+                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p className="text-gray-600 whitespace-no-wrap">${cryptocurrency.coin_mkt_cap}</p>
+                  </td>
+                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p className="text-gray-600 whitespace-no-wrap">{cryptocurrency.coin_circulating_supply}</p>
+                  </td>
+                  {/* {cryptocurrency.price_change_percentage_24h > 0 ? 
                   (<td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <span
                       className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
@@ -138,7 +150,7 @@ function App() {
                       <span className="relative">Downward Trend</span>
                     </span>
                   </td>
-                  )}
+                  )} */}
                 </Reorder.Item>
                 )}
               </tbody>
